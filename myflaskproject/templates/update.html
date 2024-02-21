@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Task Manager</title>
+{% endblock %}
+
+{% block body %}
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Task Manager
+    </span>
+  </div>
+</nav>
+<div class="container mt-3">
+  <h3>Update Task</h3>
+
+  <form action="/update/{{task.id}}" method="POST">
+    <div class="mb-3 mt-3">
+      <div class="input-group w-auto">
+      <input class="form-control" type="text" name="content" id="content" value="{{task.content}}">
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</div>
+</form>
+</div>
+{% endblock %}
